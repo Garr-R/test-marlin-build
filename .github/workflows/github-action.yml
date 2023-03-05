@@ -30,7 +30,7 @@ jobs:
             -e USE_REPO \
             -v $(pwd)/Firmware/Builds:/home/platformio/build \
             -v $(pwd)/Firmware/Configuration:/home/platformio/CustomConfiguration \
-             ghcr.io/garr-r/test-marlin-build:master
+             ghcr.io/garr-r/test-marlin-build:main
 
       - name: Push firmware
         run: |
