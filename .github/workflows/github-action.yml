@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+      - test-two-configs
     #paths:
     #  - 'Firmware/Configuration/**.h'
     #  - '.github/workflows/github-action.yml'
