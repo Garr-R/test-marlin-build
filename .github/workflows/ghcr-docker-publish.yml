@@ -11,6 +11,7 @@ on:
       - 'docker-compose.yml'
       - 'Firmware/Configuration/**.h'
       - '.github/workflows/github-action.yml'
+      - 'build-marlin.sh'
   schedule:
     - cron: 0 0 1 * * # First day of month
 
