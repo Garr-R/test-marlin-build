@@ -73,11 +73,10 @@ if [[ ${success} -eq 0 ]]; then
   printf "\nCopying compiled firmware to output folder..\n"
   cd /home/platformio/Marlin/.pio/build/$BOARD
 
-  if [ $(find . -name "*.${FW_EXTENSION}") ];
-    FIRMWARE_NAME=$(find . -name "*.${FW_EXTENSION}" -type f -exec basename {} .${FW_EXTENSION} ';')
-    md5sum $FIRMWARE_NAME.$FW_EXTENSION > $OUTPUT_DIR/$FIRMWARE_NAME.md5
-    cp $FIRMWARE_NAME.$FW_EXTENSION $OUTPUT_DIR
-  fi
+  #then [ $(find . -name "*.${FW_EXTENSION}") ];
+  FIRMWARE_NAME=$(find . -name "*.${FW_EXTENSION}" -type f -exec basename {} .${FW_EXTENSION} ';')
+  md5sum $FIRMWARE_NAME.$FW_EXTENSION > $OUTPUT_DIR/$FIRMWARE_NAME.md5
+  cp $FIRMWARE_NAME.$FW_EXTENSION $OUTPUT_DIR
 fi
     #printf "\nValidating firmware checksum.."
     #if md5sum -c $OUTPUT_DIR/$FIRMWARE_NAME.md5;
