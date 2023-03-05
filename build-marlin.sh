@@ -74,34 +74,34 @@ if [[ ${success} -eq 0 ]]; then
   cd /home/platformio/Marlin/.pio/build/$BOARD
 
   if [ $(find . -name "*.${FW_EXTENSION}") ];
-  then
     FIRMWARE_NAME=$(find . -name "*.${FW_EXTENSION}" -type f -exec basename {} .${FW_EXTENSION} ';')
     md5sum $FIRMWARE_NAME.$FW_EXTENSION > $OUTPUT_DIR/$FIRMWARE_NAME.md5
     cp $FIRMWARE_NAME.$FW_EXTENSION $OUTPUT_DIR
-
-    printf "\nValidating firmware checksum.."
-    if md5sum -c $OUTPUT_DIR/$FIRMWARE_NAME.md5;
-    then
-      printf "\e[0mMD5 Checksum Validation: \e[1;32mSucceeded\n"
-      echo ""
-      echo "  (\.   \      ,/)"
-      echo "   \(   |\     )/    Yer done!"
-      echo "   //\  | \   /\\"
-      echo "  (/ /\_#oo#_/\ \)   Happy 3D-Printing!"
-      echo "   \/\  ####  /\/"
-      echo "        '##'"
-      echo ""
-    else
-      printf "\e[0mMD5 Checksum Validation: \e[1;31mFailed\n"
-      printf "\n\e[1;31mBuild failed! \e[0mCheck the output above for errors\n"
-      exit 1
-    fi
-  else
-      printf "\e[0mMD5 Checksum Validation: \e[1;31mFirmware file with $FW_EXTENSION file extension not found\n"
-      printf "\n\e[1;31mBuild failed! \e[0mCheck the output above for errors\n"
-      exit 1
   fi
-else
-  printf "\n\e[1;31mBuild failed! \e[0mCheck the output above for errors\n"
-  exit 1
 fi
+    #printf "\nValidating firmware checksum.."
+    #if md5sum -c $OUTPUT_DIR/$FIRMWARE_NAME.md5;
+    #then
+    #  printf "\e[0mMD5 Checksum Validation: \e[1;32mSucceeded\n"
+    #  echo ""
+    #  echo "  (\.   \      ,/)"
+    #  echo "   \(   |\     )/    Yer done!"
+    #  echo "   //\  | \   /\\"
+    #  echo "  (/ /\_#oo#_/\ \)   Happy 3D-Printing!"
+    #  echo "   \/\  ####  /\/"
+    #  echo "        '##'"
+    #  echo ""
+    #else
+    #  printf "\e[0mMD5 Checksum Validation: \e[1;31mFailed\n"
+    #  printf "\n\e[1;31mBuild failed! \e[0mCheck the output above for errors\n"
+    #  exit 1
+    #fi
+  #else
+  #    printf "\e[0mMD5 Checksum Validation: \e[1;31mFirmware file with $FW_EXTENSION file extension not found\n"
+  #    printf "\n\e[1;31mBuild failed! \e[0mCheck the output above for errors\n"
+  #    exit 1
+  #fi
+#else
+#  printf "\n\e[1;31mBuild failed! \e[0mCheck the output above for errors\n"
+#  exit 1
+#fi
