@@ -1,5 +1,5 @@
 # B1SEPlus Marlin firmware build
-test
+testing
 ![Project Maintenance][maintenance-shield]
 [![License][license-shield]](LICENSE.md)
 [![GitHub Actions][actions-shield]][actions]
