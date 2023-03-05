@@ -4,15 +4,15 @@ on:
   push:
     branches:
       - main
-    #paths-ignore:
-    #  - 'README.md'
-    #  - '.gitignore'
-    #  - 'examples/**'
-    #  - 'docker-compose.yml'
-    #  - 'Firmware/Configuration/**.h'
-    #  - '.github/workflows/github-action.yml'
-  #schedule:
-  #  - cron: 0 0 1 * * # First day of month
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+      - 'examples/**'
+      - 'docker-compose.yml'
+      - 'Firmware/Configuration/**.h'
+      - '.github/workflows/github-action.yml'
+  schedule:
+    - cron: 0 0 1 * * # First day of month
 
 env:
   REGISTRY: ghcr.io
