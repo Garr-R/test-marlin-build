@@ -63,7 +63,7 @@ if [ "$FW_EXTENSION" ]; then
   printf "\n\e[01;36mOverride Detected\e[0m\n"
   printf "Setting firmware file extension to:\e[01;33m $FW_EXTENSION\e[0m\n"
 else
-  FW_EXTENSION=bin
+  FW_EXTENSION=hex
 fi
 
 if [[ ${success} -eq 0 ]]; then
