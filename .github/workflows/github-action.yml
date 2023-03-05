@@ -15,12 +15,8 @@ jobs:
     name: Build and push firmware
     runs-on: ubuntu-latest
     env:
-      #BOARD: BIGTREE_SKR_2
-      BOARD: BIGTREE_SKR_2
-      #USE_REPO: https://github.com/MarlinFirmware/Marlin
-      USE_BRANCH: 2.1.x 
-      #USE_BRANCH: bugfix-2.0.x
-      #USE_TAG: 2.0.9.3
+      BOARD: rambo
+      USE_BRANCH: 2.1.x
 
     steps:
       - name: Check out repo
@@ -34,7 +30,7 @@ jobs:
             -e USE_REPO \
             -v $(pwd)/Firmware/Builds:/home/platformio/build \
             -v $(pwd)/Firmware/Configuration:/home/platformio/CustomConfiguration \
-             ghcr.io/tinuva/b1seplus-marlin-build:master
+             ghcr.io/Garr_R/test-marlin-build:master
 
       - name: Push firmware
         run: |
